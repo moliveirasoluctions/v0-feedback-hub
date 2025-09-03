@@ -16,7 +16,7 @@ import { MoreHorizontal, Edit, UserX, UserCheck } from "lucide-react"
 import { formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { useState } from "react"
-import { EditUserDialog } from "./edit-user-dialog"
+import { EditUserDialogWrapper } from "./edit-user-dialog-wrapper"
 
 interface User {
   id: string
@@ -159,7 +159,7 @@ export function UsersTable({ users, currentUserRole }: UsersTableProps) {
       </div>
 
       {editingUser && (
-        <EditUserDialog
+        <EditUserDialogWrapper
           user={editingUser}
           open={!!editingUser}
           onOpenChange={(open) => !open && setEditingUser(null)}
