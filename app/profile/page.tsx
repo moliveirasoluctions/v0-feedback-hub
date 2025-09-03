@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
-import { ProfileForm } from "@/components/profile/profile-form"
 import { ProfileHeader } from "@/components/profile/profile-header"
+import { ProfileFormWrapper } from "@/components/profile/profile-form-wrapper"
 
 export default async function ProfilePage() {
   const supabase = await createClient()
@@ -24,7 +24,7 @@ export default async function ProfilePage() {
   return (
     <div className="flex-1 space-y-6 p-6">
       <ProfileHeader user={profile} />
-      <ProfileForm user={profile} />
+      <ProfileFormWrapper user={profile} />
     </div>
   )
 }

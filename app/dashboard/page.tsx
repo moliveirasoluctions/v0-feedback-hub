@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
-import { DashboardHeader } from "@/components/dashboard/dashboard-header"
+import { DashboardHeaderWrapper } from "@/components/dashboard/dashboard-header-wrapper"
 import { DashboardStats } from "@/components/dashboard/dashboard-stats"
 import { RecentFeedback } from "@/components/dashboard/recent-feedback"
 import { PendingActions } from "@/components/dashboard/pending-actions"
@@ -25,7 +25,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex-1 space-y-6 p-6">
-      <DashboardHeader user={profile} />
+      <DashboardHeaderWrapper user={profile} />
       <DashboardStats userId={user.id} />
       <div className="grid gap-6 md:grid-cols-2">
         <RecentFeedback userId={user.id} />

@@ -1,7 +1,7 @@
 import type React from "react"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
-import { Sidebar } from "./sidebar"
+import { SidebarWrapper } from "./sidebar-wrapper"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -27,7 +27,7 @@ export async function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="flex h-screen bg-background">
-      <Sidebar userRole={profile.role} />
+      <SidebarWrapper userRole={profile.role} />
       <main className="flex-1 overflow-auto">{children}</main>
     </div>
   )
